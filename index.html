@@ -7,8 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --primary: #0f2a4a; /* Deep Navy */
-            --secondary: #b89243; /* Financial Gold */
+            --primary: #0f2a4a; /* Deep Corporate Navy */
+            --secondary: #b89243; /* Premium Financial Gold */
             --light: #f4f7f6;
             --dark: #1c2d3d;
             --white: #ffffff;
@@ -43,7 +43,7 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
@@ -139,19 +139,52 @@
         }
 
         .contact-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .contact-container h2 {
-            margin-bottom: 1rem;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            text-align: left;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .contact-info h2 {
             font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
         }
 
-        .contact-container p {
-            margin-bottom: 2.5rem;
+        .contact-info p {
+            margin-bottom: 2rem;
             color: #e0e6ed;
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-item i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            width: 25px;
         }
 
         form {
@@ -170,6 +203,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1rem;
+            color: var(--dark);
         }
 
         footer {
@@ -195,7 +229,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <h1>AB<span>LoanSolutions</span></h1>
+                <h1>Avadhani Brisbane <span>Loan Solutions</span></h1>
             </div>
             <div>
                 <a href="#contact" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Enquire Now</a>
@@ -206,7 +240,7 @@
     <section class="hero">
         <div class="hero-container">
             <h2>Your Trusted Brisbane Mortgage Partner</h2>
-            <p>Navigating the Australian lending market to secure competitive residential home loans, investment structures, and tailored finance solutions options.</p>
+            <p>Navigating the Australian lending market to secure competitive residential home loans, investment structures, and tailored finance options.</p>
             <a href="#contact" class="btn">Book a Consultation</a>
         </div>
     </section>
@@ -215,7 +249,7 @@
         <h2>Our Finance Services</h2>
         <div class="grid">
             <div class="card">
-                <i class="fa-solid def fa-house-chimney"></i>
+                <i class="fa-solid fa-house-chimney"></i>
                 <h3>First Home Buyers</h3>
                 <p>Guiding you through government grants, concessions, and pre-approvals step-by-step to lock in your first residential property smoothly.</p>
             </div>
@@ -234,16 +268,39 @@
 
     <section id="contact" class="contact-section">
         <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <p>Based in Stretton, assisting clients across Brisbane. Drop us a message below to evaluate your borrowing capacity.</p>
-            
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <input type="tel" name="phone" placeholder="Contact Phone Number" required>
-                <textarea name="message" rows="4" placeholder="How can we assist you with your loan options?" required></textarea>
-                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
-            </form>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Based in Stretton, assisting clients across Brisbane. Reach out directly or submit the form to evaluate your borrowing capacity.</p>
+                    
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span><strong>Krishna Avadhani</strong><br>Principal Consultant</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>[Your Mobile Number Here]</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>krishna@abloansolutions.com.au</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Stretton, QLD 4116</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <input type="tel" name="phone" placeholder="Contact Phone Number" required>
+                    <textarea name="message" rows="4" placeholder="How can we assist you with your loan options?" required></textarea>
+                    <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                </form>
+            </div>
         </div>
     </section>
 
