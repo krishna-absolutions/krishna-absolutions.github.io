@@ -3,313 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avadhani Brisbane Loan Solutions | Mortgage Broker Stretton</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <title>AB Loan Solutions | Premier Mortgage Broker Brisbane</title>
+    <meta name="description" content="Expert home loans, refinancing, and property investment lending structures across Stretton, Sunnybank, and Brisbane Southside. Secure your finance with confidence.">
     <style>
         :root {
-            --primary: #0f2a4a; /* Deep Corporate Navy */
-            --secondary: #b89243; /* Premium Financial Gold */
-            --light: #f4f7f6;
-            --dark: #1c2d3d;
-            --white: #ffffff;
+            --primary: #0F1E36; /* Deep Corporate Navy */
+            --secondary: #D4AF37; /* Premium Metallic Gold */
+            --text: #333333;
+            --light: #F8F9FA;
         }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; }
+        header { background-color: var(--primary); padding: 15px 0; border-bottom: 3px solid var(--secondary); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+        .logo span { color: var(--secondary); }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 15px; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary); }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        .hero { background: linear-gradient(rgba(15, 30, 54, 0.85), rgba(15, 30, 54, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover; color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 42px; color: var(--secondary); }
+        .hero p { font-size: 18px; max-width: 700px; margin: 20px auto 30px auto; }
+        
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: var(--primary); font-size: 32px; margin-bottom: 40px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--secondary); margin: 10px auto 0 auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .service-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px; background: white; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
+        .service-card h3 { color: var(--primary); font-size: 22px; margin-top: 0; }
+        .service-link { display: inline-block; margin-top: 15px; color: var(--secondary); font-weight: bold; text-decoration: none; }
+        .service-link:hover { text-decoration: underline; }
+        
+        .wiki-section { background-color: var(--light); padding: 60px 20px; }
+        .wiki-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+        .wiki-card { background: white; padding: 25px; border-radius: 6px; border-left: 4px solid var(--secondary); }
+        .wiki-card h3 { margin-top: 0; color: var(--primary); }
+        .wiki-card a { color: var(--primary); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px; }
+        .wiki-card a:hover { color: var(--secondary); }
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 1.5rem 2rem;
-            border-bottom: 3px solid var(--secondary);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(15, 42, 74, 0.9), rgba(15, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: var(--white);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #e0e6ed;
-        }
-
-        .btn {
-            background-color: var(--secondary);
-            color: var(--primary);
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #cb9f4c;
-        }
-
-        .services {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services h2 {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            border-top: 4px solid var(--primary);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .contact-section {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 5rem 2rem;
-        }
-
-        .contact-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            text-align: left;
-            align-items: start;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .contact-info p {
-            margin-bottom: 2rem;
-            color: #e0e6ed;
-        }
-
-        .info-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .info-item i {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            width: 25px;
-        }
-
-        form {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-            color: var(--dark);
-        }
-
-        footer {
-            background-color: #0b1d33;
-            color: #8fa0b5;
-            padding: 3rem 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid #142f52;
-        }
-
-        .compliance {
-            max-width: 800px;
-            margin: 1.5rem auto 0 auto;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            color: #667c96;
-        }
+        .cta-section { background-color: var(--primary); color: white; text-align: center; padding: 50px 20px; border-top: 3px solid var(--secondary); }
+        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.3s; }
+        .cta-btn:hover { transform: scale(1.05); }
+        
+        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 30px 20px; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>Avadhani Brisbane <span>Loan Solutions</span></h1>
-            </div>
-            <div>
-                <a href="#contact" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Enquire Now</a>
-            </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
+            <nav>
+                <a href="index.html" style="color: var(--secondary);">Home</a>
+                <a href="first-home.html">First Home</a>
+                <a href="refinance.html">Refinance</a>
+                <a href="investment.html">Investment</a>
+                <a href="wiki-negative-gearing.html">Wiki: Gearing</a>
+                <a href="wiki-cgt.html">Wiki: CGT</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-container">
-            <h2>Your Trusted Brisbane Mortgage Partner</h2>
-            <p>Navigating the Australian lending market to secure competitive residential home loans, investment structures, and tailored finance options.</p>
-            <a href="#contact" class="btn">Book a Consultation</a>
-        </div>
-    </section>
+    <div class="hero">
+        <h1>Bespoke Mortgage &amp; Lending Structures</h1>
+        <p>Providing market-leading residential finance, aggressive refinance optimization, and sophisticated property investment pipelines across South Brisbane.</p>
+        <a href="mailto:info@abloansolutions.com.au?subject=General%20Lending%20Inquiry" class="cta-btn">Book an Obligation-Free Strategy Call</a>
+    </div>
 
-    <section class="services">
-        <h2>Our Finance Services</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fa-solid fa-house-chimney"></i>
+    <div class="container">
+        <h2 class="section-title">Core Lending Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
                 <h3>First Home Buyers</h3>
-                <p>Guiding you through government grants, concessions, and pre-approvals step-by-step to lock in your first residential property smoothly.</p>
+                <p>Confidently navigate the property market layout. We maximize your eligibility for QLD grants, unlock stamp duty concessions, and rapidly clarify your maximum borrowing limit.</p>
+                <a href="first-home.html" class="service-link">Access First Home Guide &rarr;</a>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Investment Portfolios</h3>
-                <p>Structuring investment loans to optimize wealth creation strategies, focusing on equity utilization and competitive rate options.</p>
+            <div class="service-card">
+                <h3>Home Loan Refinancing</h3>
+                <p>Stop paying the bank's loyalty tax. We conduct comprehensive mortgage audits to slash your active interest rate, unlock built-up property equity, or consolidate high-interest debts.</p>
+                <a href="refinance.html" class="service-link">Review Your Current Mortgage &rarr;</a>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <h3>Refinancing Reviews</h3>
-                <p>Analyzing your current mortgage structure against the market to reduce monthly repayments and unlock equity for renovations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Based in Stretton, assisting clients across Brisbane. Reach out directly or submit the form to evaluate your borrowing capacity.</p>
-                    
-                    <div class="info-details">
-                        <div class="info-item">
-                            <i class="fa-solid fa-user"></i>
-                            <span><strong>Krishna Avadhani</strong><br>Principal Consultant</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>0423096328</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>krishna@abloansolutions.com.au</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Stretton, QLD 4116</span>
-                        </div>
-                    </div>
-                </div>
-
-                <form action="https://formspree.io/f/xjgdqqee" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-                    <input type="tel" name="phone" placeholder="Contact Phone Number" required>
-                    <textarea name="message" rows="4" placeholder="How can we assist you with your loan options?" required></textarea>
-                    <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
-                </form>
+            <div class="service-card">
+                <h3>Property Investment Loans</h3>
+                <p>Structure wins over rate. We implement sophisticated multi-lender configurations designed to shield family equity, avoid cross-collateralization, and optimize your borrowing power.</p>
+                <a href="investment.html" class="service-link">Optimize Investment Finance &rarr;</a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="wiki-section">
+        <h2 class="section-title">The Knowledge Hub &amp; Investor Wiki</h2>
+        <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto; color: #666;">Empowering property buyers with authoritative insights on Australian lending rules, property taxation parameters, and wealth strategies.</p>
+        <div class="wiki-grid">
+            <div class="wiki-card">
+                <h3>Negative Gearing Matrix</h3>
+                <p>Learn how to accurately offset property operational cash flow deficits directly against your salary taxable income bracket.</p>
+                <a href="wiki-negative-gearing.html">Read Wiki Blueprint &rarr;</a>
+            </div>
+            <div class="wiki-card">
+                <h3>Capital Gains Tax (CGT)</h3>
+                <p>Master the 12-month rule, navigate the primary residence exemption structure, and deploy the strategic 6-year rental bypass rule.</p>
+                <a href="wiki-cgt.html">Read Wiki Blueprint &rarr;</a>
+            </div>
+            <div class="wiki-card">
+                <h3>The Usable Equity Loop</h3>
+                <p>Discover how to mathematically extract capital value growth out of your current home to fully finance subsequent property acquisitions.</p>
+                <a href="wiki-wealth-creation.html">Read Wiki Blueprint &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to Experience Elite Lending Brokerage?</h2>
+        <p>Whether you are buying a local home, looking to lower your current bank statements, or scaling a complex property portfolio, we build the finance layout to make it happen.</p>
+        <a href="mailto:info@abloansolutions.com.au?subject=Property%20Finance%20Engagement" class="cta-btn">Initiate Finance Assessment</a>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Avadhani Brisbane Loan Solutions. All Rights Reserved.</p>
-        <p>Email: krishna@abloansolutions.com.au | Website: www.abloansolutions.com.au</p>
-        <div class="compliance">
-            <strong>Compliance Notice:</strong> All advice provided is general in nature. As an aspiring finance specialist, full credit representation details, aggregator alignments, and Australian Credit Licence (ACL) credentials will be formally disclosed upon regulatory finalisation of trading structures. We strictly operate in accordance with National Consumer Credit Protection (NCCP) guidelines and Best Interests Duty (BID) obligations.
-        </div>
+        <p>&copy; 2026 AB Loan Solutions. All Rights Reserved. <br>
+        General Advice Warning: Information provided throughout this web platform is general educational content only. It does not constitute formal personal financial, accounting, or legal taxation advice. All credit facilities are subject to formal lender assessment guidelines and serviceability verification matrixes.</p>
     </footer>
 
 </body>
