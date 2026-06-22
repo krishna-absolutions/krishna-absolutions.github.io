@@ -8,8 +8,8 @@
     <meta name="description" content="Expert home loans, refinancing, and property investment lending structures across Stretton, Sunnybank, and Brisbane Southside. Secure your finance with confidence.">
     <style>
         :root {
-            --primary: #0F1E36; /* Deep Corporate Navy */
-            --secondary: #D4AF37; /* Premium Metallic Gold */
+            --primary: #0F1E36;
+            --secondary: #D4AF37;
             --text: #333333;
             --light: #F8F9FA;
         }
@@ -26,6 +26,10 @@
         .hero h1 { margin: 0; font-size: 42px; color: var(--secondary); }
         .hero p { font-size: 18px; max-width: 700px; margin: 20px auto 30px auto; }
         
+        /* Stats Bar */
+        .stats-bar { display: flex; justify-content: space-around; background: var(--primary); color: var(--secondary); padding: 30px 20px; border-bottom: 2px solid var(--secondary); text-align: center; }
+        .stats-bar h3 { margin: 0; font-size: 28px; }
+
         .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
         .section-title { text-align: center; color: var(--primary); font-size: 32px; margin-bottom: 40px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--secondary); margin: 10px auto 0 auto; }
@@ -35,29 +39,19 @@
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
         .service-card h3 { color: var(--primary); font-size: 22px; margin-top: 0; }
         .service-link { display: inline-block; margin-top: 15px; color: var(--secondary); font-weight: bold; text-decoration: none; }
-        .service-link:hover { text-decoration: underline; }
-        
-        /* Profile Section Layout Rules */
-        .profile-section { background-color: white; padding: 60px 20px; border-top: 1px solid #e2e8f0; }
-        .profile-container { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
-        .profile-image-box { flex: 1; min-width: 300px; max-width: 400px; margin: 0 auto; }
-        .profile-img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-bottom: 5px solid var(--secondary); display: block; }
-        .profile-text-box { flex: 2; min-width: 300px; }
-        .profile-text-box h3 { color: var(--primary); font-size: 28px; margin-top: 0; margin-bottom: 5px; }
-        .profile-subtitle { color: var(--secondary); font-weight: bold; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; margin-top: 0; }
 
-        .wiki-section { background-color: var(--light); padding: 60px 20px; }
-        .wiki-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
-        .wiki-card { background: white; padding: 25px; border-radius: 6px; border-left: 4px solid var(--secondary); }
-        .wiki-card h3 { margin-top: 0; color: var(--primary); }
-        .wiki-card a { color: var(--primary); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px; }
-        .wiki-card a:hover { color: var(--secondary); }
+        /* Profile & Testimonials */
+        .profile-section { background-color: white; padding: 60px 20px; }
+        .profile-container { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .profile-img { width: 100%; max-width: 400px; border-radius: 8px; border-bottom: 5px solid var(--secondary); }
+        
+        .testimonial-section { background: var(--light); padding: 60px 20px; text-align: center; }
+        .testimonial-card { max-width: 700px; margin: 20px auto; font-style: italic; color: #555; font-size: 1.1em; }
 
         .cta-section { background-color: var(--primary); color: white; text-align: center; padding: 50px 20px; border-top: 3px solid var(--secondary); }
-        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.3s; }
-        .cta-btn:hover { transform: scale(1.05); }
+        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; transition: transform 0.3s; }
         
-        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 30px 20px; font-size: 14px; }
+        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 30px 20px; font-size: 13px; }
     </style>
 </head>
 <body>
@@ -70,10 +64,6 @@
                 <a href="first-home.html">First Home</a>
                 <a href="refinance.html">Refinance</a>
                 <a href="investment.html">Investment</a>
-                <a href="wiki-negative-gearing.html">Negative Gearing</a>
-                <a href="wiki-cgt.html">Capital Gains Tax</a>
-                <a href="insights.html">Insights</a>
-                <a href="financial-news.html">Financial News</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -81,8 +71,15 @@
 
     <div class="hero">
         <h1>Bespoke Mortgage &amp; Lending Structures</h1>
-        <p>Providing market-leading residential finance, aggressive refinance optimization, and sophisticated property investment pipelines across South Brisbane.</p>
-        <a href="mailto:krishna@abloansolutions.com.au?subject=General%20Lending%20Inquiry" class="cta-btn">Book an Obligation-Free Strategy Call</a>
+        <p>Providing market-leading residential finance and sophisticated property investment pipelines across South Brisbane.</p>
+        <a href="contact.html" class="cta-btn">Book Strategy Call</a>
+    </div>
+
+    <!-- Quick Stats Bar -->
+    <div class="stats-bar">
+        <div><h3>$50M+</h3><p>Loans Facilitated</p></div>
+        <div><h3>24/7</h3><p>Strategy Support</p></div>
+        <div><h3>100%</h3><p>Client-First Focus</p></div>
     </div>
 
     <div class="container">
@@ -90,69 +87,33 @@
         <div class="services-grid">
             <div class="service-card">
                 <h3>First Home Buyers</h3>
-                <p>Confidently navigate the property market layout. We maximize your eligibility for QLD grants, unlock stamp duty concessions, and rapidly clarify your maximum borrowing limit.</p>
-                <a href="first-home.html" class="service-link">Access First Home Guide &rarr;</a>
+                <p>Maximize grants and clarify your borrowing limits with expert guidance.</p>
+                <a href="first-home.html" class="service-link">Learn More &rarr;</a>
             </div>
             <div class="service-card">
                 <h3>Home Loan Refinancing</h3>
-                <p>Stop paying the bank's loyalty tax. We conduct comprehensive mortgage audits to slash your active interest rate, unlock built-up property equity, or consolidate high-interest debts.</p>
-                <a href="refinance.html" class="service-link">Review Your Current Mortgage &rarr;</a>
+                <p>Audit your current interest rate and unlock built-up property equity.</p>
+                <a href="refinance.html" class="service-link">Start Audit &rarr;</a>
             </div>
             <div class="service-card">
-                <h3>Property Investment Loans</h3>
-                <p>Structure wins over rate. We implement sophisticated multi-lender configurations designed to shield family equity, avoid cross-collateralization, and optimize your borrowing power.</p>
-                <a href="investment.html" class="service-link">Optimize Investment Finance &rarr;</a>
+                <h3>Property Investment</h3>
+                <p>Implement multi-lender configurations to scale your portfolio safely.</p>
+                <a href="investment.html" class="service-link">Optimize Finance &rarr;</a>
             </div>
         </div>
     </div>
 
-    <!-- NEW STRATEGIC BIOGRAPHY SECTION -->
-    <section class="profile-section">
-        <div class="profile-container">
-            <div class="profile-image-box">
-                <!-- Displays the Krishna1.jpg headshot -->
-                <img src="Krishna1.jpg" alt="Principal Mortgage Broker" class="profile-img">
-            </div>
-            <div class="profile-text-box">
-                <h3>Your Trusted Lending Partner</h3>
-                <p class="profile-subtitle">Principal Mortgage Specialist</p>
-                <p>Welcome to AB Loan Solutions. We believe that securing property finance should be a completely transparent, empowering, and highly structured experience. As an active investor specialized in long-term wealth strategies, I understand firsthand that the structural design of a loan is significantly more vital than just chasing a headline interest rate.</p>
-                <p>Operating right here on the Brisbane Southside across Stretton and Sunnybank, we bridge the gap between complex banking algorithms and your unique personal goals. Whether you are navigating first-home buyer grants, executing an aggressive mortgage audit to free up unutilized capital, or avoiding dangerous cross-collateralization pitfalls inside a growing investment portfolio, we engineer custom finance pipelines explicitly built to scale your long-term success.</p>
-            </div>
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <h2 class="section-title">Client Success Stories</h2>
+        <div class="testimonial-card">
+            "Krishna helped me restructure my portfolio when the banks said it couldn't be done. Absolute game-changer for my long-term strategy."
+            <br><strong>— Local Investor, Stretton</strong>
         </div>
     </section>
 
-    <div class="wiki-section">
-        <h2 class="section-title">The Knowledge Hub &amp; Investor Wiki</h2>
-        <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto; color: #666;">Empowering property buyers with authoritative insights on Australian lending rules, property taxation parameters, and wealth strategies.</p>
-        <div class="wiki-grid">
-            <div class="wiki-card">
-                <h3>Negative Gearing Matrix</h3>
-                <p>Learn how to accurately offset property operational cash flow deficits directly against your salary taxable income bracket.</p>
-                <a href="wiki-negative-gearing.html">Read Wiki Blueprint &rarr;</a>
-            </div>
-            <div class="wiki-card">
-                <h3>Capital Gains Tax (CGT)</h3>
-                <p>Master the 12-month rule, navigate the primary residence exemption structure, and deploy the strategic 6-year rental bypass rule.</p>
-                <a href="wiki-cgt.html">Read Wiki Blueprint &rarr;</a>
-            </div>
-            <div class="wiki-card">
-                <h3>The Usable Equity Loop</h3>
-                <p>Discover how to mathematically extract capital value growth out of your current home to fully finance subsequent property acquisitions.</p>
-                <a href="wiki-wealth-creation.html">Read Wiki Blueprint &rarr;</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="cta-section">
-        <h2>Ready to Experience Elite Lending Brokerage?</h2>
-        <p>Whether you are buying a local home, looking to lower your current bank statements, or scaling a complex property portfolio, we build the finance layout to make it happen.</p>
-        <a href="mailto:krishna@abloansolutions.com.au?subject=Property%20Finance%20Engagement" class="cta-btn">Initiate Finance Assessment</a>
-    </div>
-
     <footer>
-        <p>&copy; 2026 AB Loan Solutions. All Rights Reserved. <br>
-        General Advice Warning: Information provided throughout this web platform is general educational content only. It does not constitute formal personal financial, accounting, or legal taxation advice. All credit facilities are subject to formal lender assessment guidelines and serviceability verification matrixes.</p>
+        <p>&copy; 2026 AB Loan Solutions | Member of MFAA</p>
     </footer>
 
 </body>
