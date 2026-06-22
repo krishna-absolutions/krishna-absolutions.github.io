@@ -37,6 +37,15 @@
         .service-link { display: inline-block; margin-top: 15px; color: var(--secondary); font-weight: bold; text-decoration: none; }
         .service-link:hover { text-decoration: underline; }
         
+        /* Profile Section Layout Rules */
+        .profile-section { background-color: white; padding: 60px 20px; border-top: 1px solid #e2e8f0; }
+        .profile-container { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .profile-image-box { flex: 1; min-width: 300px; max-width: 400px; margin: 0 auto; }
+        .profile-img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-bottom: 5px solid var(--secondary); display: block; }
+        .profile-text-box { flex: 2; min-width: 300px; }
+        .profile-text-box h3 { color: var(--primary); font-size: 28px; margin-top: 0; margin-bottom: 5px; }
+        .profile-subtitle { color: var(--secondary); font-weight: bold; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; margin-top: 0; }
+
         .wiki-section { background-color: var(--light); padding: 60px 20px; }
         .wiki-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
         .wiki-card { background: white; padding: 25px; border-radius: 6px; border-left: 4px solid var(--secondary); }
@@ -94,6 +103,22 @@
             </div>
         </div>
     </div>
+
+    <!-- NEW STRATEGIC BIOGRAPHY SECTION -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-image-box">
+                <!-- Displays the KrishnaImage1.jpg headshot -->
+                <img src="KrishnaImage1.jpg" alt="Principal Mortgage Broker" class="profile-img">
+            </div>
+            <div class="profile-text-box">
+                <h3>Your Trusted Lending Partner</h3>
+                <p class="profile-subtitle">Principal Mortgage Specialist</p>
+                <p>Welcome to AB Loan Solutions. We believe that securing property finance should be a completely transparent, empowering, and highly structured experience. As an active investor specialized in long-term wealth strategies, I understand firsthand that the structural design of a loan is significantly more vital than just chasing a headline interest rate.</p>
+                <p>Operating right here on the Brisbane Southside across Stretton and Sunnybank, we bridge the gap between complex banking algorithms and your unique personal goals. Whether you are navigating first-home buyer grants, executing an aggressive mortgage audit to free up unutilized capital, or avoiding dangerous cross-collateralization pitfalls inside a growing investment portfolio, we engineer custom finance pipelines explicitly built to scale your long-term success.</p>
+            </div>
+        </div>
+    </section>
 
     <div class="wiki-section">
         <h2 class="section-title">The Knowledge Hub &amp; Investor Wiki</h2>
