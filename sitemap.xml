@@ -32,4 +32,8 @@
     <loc>https://abloansolutions.com.au/wiki-wealth-creation.html</loc>
     <priority>0.70</priority>
   </url>
+  <url>
+    <loc>https://abloansolutions.com.au/insights.html</loc>
+    <priority>0.85</priority>
+  </url>
 </urlset>
