@@ -21,6 +21,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://abloansolutions.com.au/blog.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://abloansolutions.com.au/wiki-negative-gearing.html</loc>
     <priority>0.70</priority>
   </url>
@@ -32,8 +36,16 @@
     <loc>https://abloansolutions.com.au/wiki-wealth-creation.html</loc>
     <priority>0.70</priority>
   </url>
-  <url>
+    <url>
     <loc>https://abloansolutions.com.au/insights.html</loc>
-    <priority>0.85</priority>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://abloansolutions.com.au/financial-news.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://abloansolutions.com.au/contact.html</loc>
+    <priority>0.70</priority>
   </url>
 </urlset>
