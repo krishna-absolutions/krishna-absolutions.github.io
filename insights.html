@@ -4,218 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Insights & Property Finance Media | AB Loan Solutions</title>
-    <style>
+       <style>
         :root {
-            --primary-navy: #0A192F;
-            --accent-gold: #D4AF37;
-            --light-bg: #F4F6F9;
-            --text-dark: #333333;
-            --text-light: #FFFFFF;
+            --primary: #0F1E36;
+            --secondary: #D4AF37;
+            --text: #333333;
+            --light: #F8F9FA;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            padding: 20px 0;
-            border-bottom: 3px solid var(--accent-gold);
-        }
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-        .logo span {
-            color: var(--accent-gold);
-        }
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: var(--accent-gold);
-        }
-        .hero {
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            margin: 0 0 15px 0;
-            font-size: 3rem;
-        }
-        .hero h1 span {
-            color: var(--accent-gold);
-        }
-        .hero p {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #CCD6F6;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 50px 0;
-        }
-        .card {
-            background: var(--text-light);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--accent-gold);
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-        .video-container iframe {
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; }
+        
+        /* Header & Nav */
+        header { background-color: var(--primary); padding: 15px 0; border-bottom: 3px solid var(--secondary); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+        .logo span { color: var(--secondary); }
+        nav { display: flex; align-items: center; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 15px; transition: color 0.3s; white-space: nowrap; }
+        nav a:hover, .dropbtn:hover { color: var(--secondary); cursor: pointer; }
+
+        /* Dropdown Styles */
+        .dropdown { position: relative; display: inline-block; }
+        .dropbtn { background: none; border: none; color: white; font-weight: 500; font-size: 15px; margin-left: 20px; }
+        .dropdown-content {
+            display: none;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .card-content {
-            padding: 25px;
-        }
-        .tag {
-            background-color: rgba(10, 25, 47, 0.1);
-            color: var(--primary-navy);
-            padding: 4px 10px;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
             border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
         }
-        .card-content h2 {
-            margin: 15px 0 10px 0;
-            font-size: 1.4rem;
-            color: var(--primary-navy);
+        .dropdown-content a {
+            color: var(--primary);
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 0;
         }
-        .card-content p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        footer {
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-            border-top: 3px solid var(--accent-gold);
-        }
-        /* Dropdown container */
-.dropdown { position: relative; display: inline-block; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a:hover { background-color: var(--secondary); color: white; }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: var(--primary-navy);
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-}
-
-/* Show the dropdown on hover */
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: var(--accent-gold); color: white; }
-        /* --- Navigation Dropdown Styles --- */
-.dropdown { position: relative; display: inline-block; }
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border-radius: 4px;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown-content a {
-    color: #0A192F;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
-}
-
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: #D4AF37; color: white; }
-/* ---------------------------------- */
+        /* Hero & Content */
+        .hero { background: linear-gradient(rgba(15, 30, 54, 0.85), rgba(15, 30, 54, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover; color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 42px; color: var(--secondary); }
+        .hero p { font-size: 18px; max-width: 700px; margin: 20px auto 30px auto; }
+        .stats-bar { display: flex; justify-content: space-around; background: var(--primary); color: var(--secondary); padding: 30px 20px; border-bottom: 2px solid var(--secondary); text-align: center; }
+        .stats-bar h3 { margin: 0; font-size: 28px; }
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: var(--primary); font-size: 32px; margin-bottom: 40px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--secondary); margin: 10px auto 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .service-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px; background: white; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-bottom: 3px solid transparent; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); border-bottom: 3px solid var(--secondary); }
+        .service-card h3 { color: var(--primary); font-size: 22px; margin-top: 0; }
+        .service-link { display: inline-block; margin-top: 15px; color: var(--secondary); font-weight: bold; text-decoration: none; }
+        .testimonial-section { background: var(--light); padding: 60px 20px; text-align: center; }
+        .testimonial-card { max-width: 700px; margin: 20px auto; font-style: italic; color: #555; font-size: 1.1em; }
+        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; transition: transform 0.3s; }
+        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 40px 20px; font-size: 13px; }
+        footer a { color: #aaa; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="first-home.html">First Home</a>
-    <a href="refinance.html">Refinance</a>
-    <a href="investment.html">Investment</a>
-    
-    <!-- Grouping your content under a single "Resources" or "Hub" menu -->
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Knowledge Hub &#9662;</a>
-        <div class="dropdown-content">
-            <a href="blog.html">Research & Insights</a>
-            <a href="wiki-negative-gearing.html">Negative Gearing</a>
-            <a href="wiki-cgt.html">Capital Gains Tax</a>
-            <a href="wiki-wealth-creation.html">Market Research</a>
-            <a href="financial-news.html">Financial News</a>
-        </div>
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="first-home.html">First Home</a>
+            <a href="refinance.html">Refinance</a>
+            <a href="investment.html">Investment</a>
+            <div class="dropdown">
+                <span class="dropbtn">Knowledge Hub &#9662;</span>
+                <div class="dropdown-content">
+                    <a href="blog.html">Research & Insights</a>
+                    <a href="wiki-negative-gearing.html">Negative Gearing</a>
+                    <a href="wiki-cgt.html">Capital Gains Tax</a>
+                    <a href="wiki-wealth-creation.html">Market Research</a>
+                    <a href="financial-news.html">Financial News</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
-    
-    <a href="contact.html">Contact</a>
-</nav>
-        </div>
-    </header>
+</header>
 
     <section class="hero">
         <div class="container">
