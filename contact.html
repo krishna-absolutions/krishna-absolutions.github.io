@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact AB Loan Solutions</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 600px; margin: auto; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #D4AF37; color: #0F1E36; padding: 12px 25px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Inquiry Form</h1>
+    <p>Please provide your details below for an obligation-free strategy call.</p>
+    
+    <!-- This form uses Formspree to send emails without needing a server -->
+    <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Inquiry Type</label>
+            <select name="type">
+                <option value="first-home">First Home Buyer</option>
+                <option value="refinance">Refinance Audit</option>
+                <option value="investment">Investment Strategy</option>
+            </select>
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>
