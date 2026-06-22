@@ -5,113 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding Negative Gearing in Australia | AB Loan Solutions</title>
     <meta name="description" content="A comprehensive guide to how negative gearing works for Australian property investors, tax benefits, risks, and lending strategies.">
-    <style>
+
+        <style>
         :root {
-            --primary: #0F1E36; /* Deep Navy */
-            --secondary: #D4AF37; /* Metallic Gold */
+            --primary: #0F1E36;
+            --secondary: #D4AF37;
             --text: #333333;
             --light: #F8F9FA;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; }
+        
+        /* Header & Nav */
         header { background-color: var(--primary); padding: 15px 0; border-bottom: 3px solid var(--secondary); position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
         .logo span { color: var(--secondary); }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 15px; transition: color 0.3s; }
-        nav a:hover { color: var(--secondary); }
-        .hero { background: linear-gradient(rgba(15, 30, 54, 0.9), rgba(15, 30, 54, 0.95)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover; color: white; padding: 60px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 36px; color: var(--secondary); }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        h2 { color: var(--primary); border-left: 4px solid var(--secondary); padding-left: 10px; margin-top: 30px; }
-        .highlight-box { background-color: var(--light); border-left: 4px solid var(--primary); padding: 20px; margin: 20px 0; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: var(--primary); color: white; }
-        tr:nth-child(even) { background-color: var(--light); }
-        .cta-section { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 3px solid var(--secondary); }
-        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; transition: transform 0.3s; }
-        .cta-btn:hover { transform: scale(1.05); }
-        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 20px; font-size: 14px; }
-        /* Dropdown container */
-.dropdown { position: relative; display: inline-block; }
+        nav { display: flex; align-items: center; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 15px; transition: color 0.3s; white-space: nowrap; }
+        nav a:hover, .dropbtn:hover { color: var(--secondary); cursor: pointer; }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+        /* Dropdown Styles */
+        .dropdown { position: relative; display: inline-block; }
+        .dropbtn { background: none; border: none; color: white; font-weight: 500; font-size: 15px; margin-left: 20px; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 4px;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+        }
+        .dropdown-content a {
+            color: var(--primary);
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 0;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a:hover { background-color: var(--secondary); color: white; }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: var(--primary-navy);
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-}
-
-/* Show the dropdown on hover */
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: var(--accent-gold); color: white; }
-        /* --- Navigation Dropdown Styles --- */
-.dropdown { position: relative; display: inline-block; }
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border-radius: 4px;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown-content a {
-    color: #0A192F;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
-}
-
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: #D4AF37; color: white; }
-/* ---------------------------------- */
+        /* Hero & Content */
+        .hero { background: linear-gradient(rgba(15, 30, 54, 0.85), rgba(15, 30, 54, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover; color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 42px; color: var(--secondary); }
+        .hero p { font-size: 18px; max-width: 700px; margin: 20px auto 30px auto; }
+        .stats-bar { display: flex; justify-content: space-around; background: var(--primary); color: var(--secondary); padding: 30px 20px; border-bottom: 2px solid var(--secondary); text-align: center; }
+        .stats-bar h3 { margin: 0; font-size: 28px; }
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: var(--primary); font-size: 32px; margin-bottom: 40px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--secondary); margin: 10px auto 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .service-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px; background: white; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-bottom: 3px solid transparent; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); border-bottom: 3px solid var(--secondary); }
+        .service-card h3 { color: var(--primary); font-size: 22px; margin-top: 0; }
+        .service-link { display: inline-block; margin-top: 15px; color: var(--secondary); font-weight: bold; text-decoration: none; }
+        .testimonial-section { background: var(--light); padding: 60px 20px; text-align: center; }
+        .testimonial-card { max-width: 700px; margin: 20px auto; font-style: italic; color: #555; font-size: 1.1em; }
+        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; transition: transform 0.3s; }
+        footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 40px 20px; font-size: 13px; }
+        footer a { color: #aaa; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-      <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="first-home.html">First Home</a>
-    <a href="refinance.html">Refinance</a>
-    <a href="investment.html">Investment</a>
-    
-    <!-- Grouping your content under a single "Resources" or "Hub" menu -->
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Knowledge Hub &#9662;</a>
-        <div class="dropdown-content">
-            <a href="blog.html">Research & Insights</a>
-            <a href="wiki-negative-gearing.html">Negative Gearing</a>
-            <a href="wiki-cgt.html">Capital Gains Tax</a>
-            <a href="wiki-wealth-creation.html">Market Research</a>
-            <a href="financial-news.html">Financial News</a>
-        </div>
+  <header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="first-home.html">First Home</a>
+            <a href="refinance.html">Refinance</a>
+            <a href="investment.html">Investment</a>
+            <div class="dropdown">
+                <span class="dropbtn">Knowledge Hub &#9662;</span>
+                <div class="dropdown-content">
+                    <a href="blog.html">Research & Insights</a>
+                    <a href="wiki-negative-gearing.html">Negative Gearing</a>
+                    <a href="wiki-cgt.html">Capital Gains Tax</a>
+                    <a href="wiki-wealth-creation.html">Market Research</a>
+                    <a href="financial-news.html">Financial News</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
-    
-    <a href="contact.html">Contact</a>
-</nav>
-        </div>
-    </header>
+</header>
 
     <div class="hero">
         <h1>The Ultimate Guide to Negative Gearing in Australia</h1>
