@@ -13,6 +13,30 @@
         .strategy-box { background: #f9f9f9; padding: 25px; border-left: 5px solid var(--secondary); margin: 20px 0; }
         .cta-box { background: var(--primary); color: white; padding: 30px; text-align: center; border-radius: 8px; margin-top: 40px; }
         .btn { display: inline-block; background: var(--secondary); color: var(--primary); padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 15px; }
+        /* Dropdown container */
+.dropdown { position: relative; display: inline-block; }
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--primary-navy);
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a:hover { background-color: var(--accent-gold); color: white; }
     </style>
 </head>
 <body>
@@ -20,19 +44,26 @@
         <header>
         <div class="nav-container">
             <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
-            <nav>
-                <a href="index.html" style="color: var(--secondary);">Home</a>
-                <a href="first-home.html">First Home</a>
-                <a href="refinance.html">Refinance</a>
-                <a href="investment.html">Investment</a>
-                <a href="blog.html">Research</a>
-                <a href="wiki-negative-gearing.html">Negative Gearing</a>
-                <a href="wiki-cgt.html">Capital Gains Tax</a>
-                <a href="wiki-wealth-creation.html">Market Research</a>
-                <a href="insights.html">Insights</a>
-                <a href="financial-news.html">Financial News</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="first-home.html">First Home</a>
+    <a href="refinance.html">Refinance</a>
+    <a href="investment.html">Investment</a>
+    
+    <!-- Grouping your content under a single "Resources" or "Hub" menu -->
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Knowledge Hub &#9662;</a>
+        <div class="dropdown-content">
+            <a href="blog.html">Research & Insights</a>
+            <a href="wiki-negative-gearing.html">Negative Gearing</a>
+            <a href="wiki-cgt.html">Capital Gains Tax</a>
+            <a href="wiki-wealth-creation.html">Market Research</a>
+            <a href="financial-news.html">Financial News</a>
+        </div>
+    </div>
+    
+    <a href="contact.html">Contact</a>
+</nav>
         </div>
     </header>
     
