@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AB Loan Solutions | Premier Mortgage Broker Brisbane</title>
     <meta name="description" content="Expert home loans, refinancing, and property investment lending structures across Stretton, Sunnybank, and Brisbane Southside. Secure your finance with confidence.">
- <style>
+    <style>
         :root {
             --primary: #0F1E36;
             --secondary: #D4AF37;
@@ -24,16 +24,16 @@
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 15px; transition: color 0.3s; white-space: nowrap; }
         nav a:hover, .dropbtn:hover { color: var(--secondary); cursor: pointer; }
 
-        /* Dropdown Styles */
-        .dropdown { position: relative; display: inline-block; }
-        .dropbtn { background: none; border: none; color: white; font-weight: 500; font-size: 15px; margin-left: 20px; }
+        /* Dropdown Styles (Fixed Z-Index) */
+        .dropdown { position: relative; display: inline-block; z-index: 9998; }
+        .dropbtn { background: none; border: none; color: white; font-weight: 500; font-size: 15px; margin-left: 20px; cursor: pointer; }
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #ffffff;
             min-width: 220px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1000;
+            z-index: 9999;
             border-radius: 4px;
             top: 100%;
             left: 0;
@@ -69,7 +69,7 @@
         .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--primary); padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px; transition: transform 0.3s; }
         footer { background-color: #0b1424; color: #aaa; text-align: center; padding: 40px 20px; font-size: 13px; }
         footer a { color: #aaa; text-decoration: underline; }
-    </style>   
+    </style>
 </head>
 <body>
 
@@ -109,6 +109,11 @@
 </div>
 
 <div class="container">
+    <!-- Restored Image -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <img src="Krishna1.jpg" alt="Krishna" style="max-width: 200px; border-radius: 50%; border: 3px solid #D4AF37;">
+    </div>
+
     <h2 class="section-title">Core Lending Services</h2>
     <div class="services-grid">
         <div class="service-card">
