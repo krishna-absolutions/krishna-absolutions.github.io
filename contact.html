@@ -4,43 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact AB Loan Solutions</title>
+    <!-- Linked to your central style file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- We keep a tiny bit of extra style here just for the form layout -->
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 600px; margin: auto; }
+        .form-container { max-width: 600px; margin: 40px auto; padding: 20px; }
         .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        button { background-color: #D4AF37; color: #0F1E36; padding: 12px 25px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #0F1E36; text-decoration: none; font-weight: bold; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--primary); }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: var(--secondary); color: var(--primary); padding: 12px 25px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
-    <h1>Inquiry Form</h1>
-    <p>Please provide your details below for an obligation-free strategy call.</p>
-    
-    <form action="https://formspree.io/f/xojoqepd" method="POST">
-        <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" name="name" required>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="first-home.html">First Home</a>
+                <a href="refinance.html">Refinance</a>
+                <a href="investment.html">Investment</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
-        <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="email" required>
-        </div>
-        <!-- Mobile Number Field Added -->
-        <div class="form-group">
-            <label>Mobile Number (Optional)</label>
-            <input type="tel" name="phone">
-        </div>
-        <div class="form-group">
-            <label>Inquiry Type</label>
-            <select name="type">
-                <option value="first-home">First Home Buyer</option>
-                <option value="refinance">Refinance Audit</option>
-                <option value="investment">Investment Strategy</option>
-            </select>
-        </div>
-        <button type="submit">Submit Request</button>
-    </form>
+    </header>
+
+    <div class="container form-container">
+        <h1>Inquiry Form</h1>
+        <p>Please provide your details below for an obligation-free strategy call.</p>
+        
+        <form action="https://formspree.io/f/xojoqepd" method="POST">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Mobile Number (Optional)</label>
+                <input type="tel" name="phone">
+            </div>
+            <div class="form-group">
+                <label>Inquiry Type</label>
+                <select name="type">
+                    <option value="first-home">First Home Buyer</option>
+                    <option value="refinance">Refinance Audit</option>
+                    <option value="investment">Investment Strategy</option>
+                </select>
+            </div>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <footer>
+        <p><strong>AB Loan Solutions</strong> | Member of the MFAA</p>
+    </footer>
+
 </body>
 </html>
