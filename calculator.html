@@ -44,7 +44,7 @@
 </section>
 
 <div class="container">
-    <div class="calc-grid">
+    <div class="calc-grid calc-grid-3">
 
         <div class="calc-card">
             <h2>Monthly Repayments</h2>
@@ -80,6 +80,23 @@
             </div>
             <button type="button" onclick="calcBorrowing()">Estimate Borrowing Power</button>
             <div class="calc-result" id="borrowResult"></div>
+        </div>
+
+        <div class="calc-card">
+            <h2>Queensland Stamp Duty (est.)</h2>
+            <div class="form-group">
+                <label for="propValue">Property Value ($)</label>
+                <input type="number" id="propValue" value="600000" min="0" step="1000">
+            </div>
+            <div class="form-group">
+                <label for="buyerType">Buyer Type</label>
+                <select id="buyerType">
+                    <option value="standard">Standard (investor / non-first-home)</option>
+                    <option value="firsthome">First home buyer</option>
+                </select>
+            </div>
+            <button type="button" onclick="calcStampDuty()">Estimate Stamp Duty</button>
+            <div class="calc-result" id="stampResult"></div>
         </div>
 
     </div>
@@ -128,6 +145,35 @@ function calcRepayments() {
     result.innerHTML =
         '<div class="calc-figure"><strong>$' + monthly.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</strong><span>per month</span></div>' +
         '<div class="calc-sub">Total interest over the loan: $' + totalInterest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</div>';
+}
+
+function calcStampDuty() {
+    var value = parseFloat(document.getElementById('propValue').value) || 0;
+    var buyerType = document.getElementById('buyerType').value;
+    var result = document.getElementById('stampResult');
+    if (value <= 0) { result.innerHTML = '<p>Please enter a valid property value.</p>'; return; }
+
+    if (buyerType === 'firsthome') {
+        result.innerHTML =
+            '<div class="calc-sub">First home buyers may qualify for a full or partial transfer duty concession or exemption, depending on the property value and current Queensland Revenue Office thresholds — these change periodically, so I\'ll confirm the exact figure for your situation. See the <a href="financial-news.html">QRO link</a> on the Financial News page for current thresholds.</div>';
+        return;
+    }
+
+    var duty = 0;
+    if (value <= 5000) {
+        duty = 0;
+    } else if (value <= 75000) {
+        duty = (value - 5000) * 0.015;
+    } else if (value <= 540000) {
+        duty = 1050 + (value - 75000) * 0.035;
+    } else if (value <= 1000000) {
+        duty = 17325 + (value - 540000) * 0.045;
+    } else {
+        duty = 38025 + (value - 1000000) * 0.0575;
+    }
+    result.innerHTML =
+        '<div class="calc-figure"><strong>$' + duty.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</strong><span>estimated duty</span></div>' +
+        '<div class="calc-sub">Based on standard Queensland general transfer duty rates. Other concessions (e.g. for owner-occupiers of some property types) may apply — this is an estimate only.</div>';
 }
 
 function calcBorrowing() {
