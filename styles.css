@@ -51,6 +51,14 @@ a:hover { color: var(--gold); }
 
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
+.skip-link {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--gold); color: var(--ink);
+    padding: 12px 20px; font-weight: 600; z-index: 2000;
+    text-decoration: none;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { animation: none !important; transition: none !important; }
