@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Loan Repayment &amp; Borrowing Power Calculator | AB Loan Solutions</title>
+<meta name="description" content="Free home loan repayment and borrowing power calculator for Brisbane buyers, refinancers and investors, from mortgage broker AB Loan Solutions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://abloansolutions.com.au/calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Home Loan Repayment & Borrowing Power Calculator | AB Loan Solutions">
+<meta property="og:description" content="Estimate your repayments and borrowing capacity in under a minute.">
+<meta property="og:url" content="https://abloansolutions.com.au/calculator.html">
+<meta property="og:image" content="https://abloansolutions.com.au/Krishna1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AB Loan<span>Solutions</span></a>
+        <nav class="primary-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="first-home.html">First Home</a>
+            <a href="refinance.html">Refinance</a>
+            <a href="investment.html">Investment</a>
+            <a href="resources.html">Resources</a>
+            <a href="calculator.html" aria-current="page">Calculator</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container narrow-top" style="padding-bottom:44px;">
+        <span class="hero-eyebrow">Free Tool</span>
+        <h1 style="color:var(--paper); max-width:18ch;">Repayment &amp; borrowing power calculator</h1>
+        <p class="lead" style="max-width:60ch;">Get a quick estimate in your browser — nothing is sent anywhere, and it's not a substitute for formal pre-approval.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="calc-grid">
+
+        <div class="calc-card">
+            <h2>Monthly Repayments</h2>
+            <div class="form-group">
+                <label for="loanAmount">Loan Amount ($)</label>
+                <input type="number" id="loanAmount" value="500000" min="0" step="1000">
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Interest Rate (% p.a.)</label>
+                <input type="number" id="interestRate" value="6.20" min="0" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="loanTerm">Loan Term (years)</label>
+                <input type="number" id="loanTerm" value="30" min="1" step="1">
+            </div>
+            <button type="button" onclick="calcRepayments()">Calculate Repayments</button>
+            <div class="calc-result" id="repayResult"></div>
+        </div>
+
+        <div class="calc-card">
+            <h2>Estimated Borrowing Power</h2>
+            <div class="form-group">
+                <label for="income">Combined Annual Income, before tax ($)</label>
+                <input type="number" id="income" value="150000" min="0" step="1000">
+            </div>
+            <div class="form-group">
+                <label for="expenses">Monthly Living Expenses &amp; Existing Debts ($)</label>
+                <input type="number" id="expenses" value="2500" min="0" step="100">
+            </div>
+            <div class="form-group">
+                <label for="dependents">Number of Dependents</label>
+                <input type="number" id="dependents" value="0" min="0" step="1">
+            </div>
+            <button type="button" onclick="calcBorrowing()">Estimate Borrowing Power</button>
+            <div class="calc-result" id="borrowResult"></div>
+        </div>
+
+    </div>
+
+    <p class="calc-disclaimer">These figures are indicative only, based on simplified assumptions, and don't reflect any specific lender's serviceability policy. Your actual borrowing capacity depends on a full assessment of your income, expenses, liabilities and credit history — that's exactly what a strategy call is for.</p>
+</div>
+
+<div class="cta-section">
+    <div class="cta-inner">
+        <h2>Want the real number?</h2>
+        <p>These are estimates. A proper assessment takes into account your full financial picture and current lender policies.</p>
+        <a href="contact.html" class="cta-btn">Book a Strategy Call</a>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <span class="brandmark">AB Loan<span>Solutions</span></span>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="contact.html">Contact</a>
+                <a href="tel:+61423096328">0423 096 328</a>
+            </div>
+        </div>
+        <p class="footer-fine"><strong>AB Loan Solutions</strong> | Member of the Finance Brokers Association of Australia (FBAA) | Credit Representative (No. 579834) of Greenline Financial Services Group Pty Ltd (Australian Credit Licence 520947).<br>
+        &copy; 2026 AB Loan Solutions. All rights reserved. General Advice Warning: information on this site is educational only and does not constitute personal financial advice.</p>
+    </div>
+</footer>
+
+<script>
+function calcRepayments() {
+    var P = parseFloat(document.getElementById('loanAmount').value) || 0;
+    var annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+    var years = parseFloat(document.getElementById('loanTerm').value) || 0;
+    var r = (annualRate / 100) / 12;
+    var n = years * 12;
+    var result = document.getElementById('repayResult');
+    if (P <= 0 || n <= 0) { result.innerHTML = '<p>Please enter valid figures.</p>'; return; }
+    var monthly;
+    if (r === 0) { monthly = P / n; } else { monthly = P * (r * Math.pow(1+r, n)) / (Math.pow(1+r, n) - 1); }
+    var totalPaid = monthly * n;
+    var totalInterest = totalPaid - P;
+    result.innerHTML =
+        '<div class="calc-figure"><strong>$' + monthly.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</strong><span>per month</span></div>' +
+        '<div class="calc-sub">Total interest over the loan: $' + totalInterest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</div>';
+}
+
+function calcBorrowing() {
+    var income = parseFloat(document.getElementById('income').value) || 0;
+    var expenses = parseFloat(document.getElementById('expenses').value) || 0;
+    var dependents = parseFloat(document.getElementById('dependents').value) || 0;
+    var result = document.getElementById('borrowResult');
+    if (income <= 0) { result.innerHTML = '<p>Please enter valid figures.</p>'; return; }
+    var monthlyIncome = income / 12;
+    var netAvailable = monthlyIncome * 0.65 - expenses - (dependents * 400);
+    if (netAvailable < 0) netAvailable = 0;
+    var assumedRate = 0.075;
+    var r = assumedRate / 12;
+    var n = 30 * 12;
+    var maxRepayment = netAvailable * 0.9;
+    var estimatedLoan = maxRepayment * (Math.pow(1+r, n) - 1) / (r * Math.pow(1+r, n));
+    if (estimatedLoan < 0) estimatedLoan = 0;
+    result.innerHTML =
+        '<div class="calc-figure"><strong>$' + estimatedLoan.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</strong><span>rough estimate</span></div>' +
+        '<div class="calc-sub">Assumes a serviceability buffer and a 7.5% assessment rate. Real lender outcomes vary.</div>';
+}
+</script>
+
+</body>
+</html>

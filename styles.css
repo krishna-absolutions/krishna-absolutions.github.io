@@ -111,30 +111,25 @@ nav.primary-nav a[aria-current="page"]::after { width: 100%; }
 nav.primary-nav a:hover, .dropbtn:hover,
 nav.primary-nav a[aria-current="page"] { color: var(--gold-soft); }
 
-.dropdown { position: relative; display: inline-block; }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: var(--paper);
-    min-width: 230px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-    z-index: 999;
-    top: 100%;
-    left: 0;
-    margin-top: 12px;
-    border-top: 2px solid var(--gold);
-}
-.dropdown-content a {
-    color: var(--ink);
-    padding: 12px 18px;
+/* ---------- Resource hub cards ---------- */
+.hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.hub-card {
     display: block;
     text-decoration: none;
-    font-size: 0.9rem;
-    margin-left: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold);
+    padding: 26px 24px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
-.dropdown-content a::after { display: none; }
-.dropdown-content a:hover { background: var(--paper-deep); color: var(--plum); }
-.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
+.hub-card:hover { box-shadow: 0 14px 30px rgba(27,20,32,0.10); transform: translateY(-2px); }
+.hub-tag { display: block; color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 10px; }
+.hub-card h2 { font-size: 1.15rem; margin-bottom: 8px; }
+.hub-card p { font-size: 0.92rem; color: var(--text-soft); margin-bottom: 14px; }
+.hub-link { font-weight: 600; color: var(--plum); font-size: 0.9rem; }
+.hub-card:hover .hub-link { color: var(--gold); }
+@media screen and (max-width: 900px) { .hub-grid { grid-template-columns: 1fr 1fr; } }
+@media screen and (max-width: 620px) { .hub-grid { grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 860px) {
     .nav-container { flex-direction: column; align-items: flex-start; }
@@ -286,6 +281,29 @@ footer.site-footer a:hover { text-decoration: underline; }
 
 .loop-step { display: flex; gap: 20px; margin: 26px 0; align-items: flex-start; }
 .loop-icon { font-family: 'Fraunces', serif; color: var(--gold); font-size: 1.5rem; flex: 0 0 auto; min-width: 44px; }
+
+/* ---------- About page ---------- */
+.about-grid { display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: start; }
+.about-portrait { width: 100%; border: 1px solid var(--line); }
+@media screen and (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } .about-portrait { max-width: 280px; } }
+
+/* ---------- Calculator ---------- */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.calc-card { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--plum); padding: 30px; }
+.calc-card h2 { margin-bottom: 20px; }
+.calc-card button[type="button"] {
+    background: var(--gold); color: var(--ink); border: none; padding: 13px 26px;
+    font-weight: 600; border-radius: var(--radius); cursor: pointer; font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+.calc-card button[type="button"]:hover { background: var(--gold-soft); }
+.calc-result { margin-top: 20px; min-height: 20px; }
+.calc-figure { display: flex; align-items: baseline; gap: 10px; }
+.calc-figure strong { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--plum); }
+.calc-figure span { color: var(--text-soft); font-size: 0.9rem; }
+.calc-sub { margin-top: 8px; color: var(--text-soft); font-size: 0.88rem; }
+.calc-disclaimer { max-width: 760px; margin: 32px auto 0; font-size: 0.85rem; color: var(--text-soft); text-align: center; }
+@media screen and (max-width: 800px) { .calc-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Misc content pages (wiki / legal) ---------- */
 .wiki-body h2 { margin-top: 40px; }
