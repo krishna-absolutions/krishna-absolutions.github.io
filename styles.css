@@ -179,6 +179,16 @@ nav.primary-nav a[aria-current="page"] { color: var(--gold-soft); }
     .hero-portrait-frame { max-width: 220px; }
 }
 
+/* ---------- Inner-page hero: text + small photo badge ---------- */
+.hero-flex { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+.hero-flex-text { flex: 1 1 420px; }
+.hero-badge { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
+.hero-badge-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); display: block; }
+.hero-badge-text { display: flex; flex-direction: column; }
+.hero-badge-text strong { color: var(--paper); font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; }
+.hero-badge-text span { color: var(--gold-soft); font-size: 0.78rem; }
+@media screen and (max-width: 700px) { .hero-badge { display: none; } }
+
 /* ---------- Stat strip ---------- */
 .stat-strip {
     border-top: 1px solid var(--plum);
