@@ -171,7 +171,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--gold-soft); }
 .hero-portrait {
     display: block;
     width: 100%;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
     object-fit: cover;
 }
 @media screen and (max-width: 800px) {
