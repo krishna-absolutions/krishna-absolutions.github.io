@@ -313,6 +313,32 @@ footer.site-footer a:hover { text-decoration: underline; }
 .faq-item:first-of-type { border-top: 1px solid var(--line); }
 .faq-item h2 { font-size: 1.1rem; margin-bottom: 8px; }
 
+/* ---------- Books page ---------- */
+.store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.store-card {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    text-decoration: none; text-align: center;
+    background: var(--ink); color: var(--paper);
+    border: 1px solid var(--plum); padding: 28px 20px;
+    transition: background 0.2s ease;
+}
+.store-card:hover { background: var(--plum-deep); }
+.store-card strong { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--paper); }
+.store-card span { color: var(--gold-soft); font-size: 0.88rem; }
+@media screen and (max-width: 700px) { .store-grid { grid-template-columns: 1fr; } }
+
+.book-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.book-card { text-align: center; }
+.book-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--line); display: block; margin-bottom: 12px; }
+.book-card-noimg {
+    width: 100%; aspect-ratio: 3/4; border: 1px dashed var(--line); background: var(--paper-deep);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-family: 'Playfair Display', serif; color: var(--text-soft); padding: 16px; margin-bottom: 12px; box-sizing: border-box;
+}
+.book-card h3 { font-size: 1rem; margin-bottom: 4px; }
+.book-meta { font-size: 0.82rem; color: var(--text-soft); }
+@media screen and (max-width: 900px) { .book-grid { grid-template-columns: repeat(2, 1fr); } }
+
 /* ---------- About page ---------- */
 .about-grid { display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: start; }
 .about-portrait { width: 100%; border: 1px solid var(--line); }
