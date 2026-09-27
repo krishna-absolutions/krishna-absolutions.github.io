@@ -167,12 +167,23 @@ nav.primary-nav a[aria-current="page"] { color: var(--gold-soft); }
     border: 1px solid var(--plum);
     padding: 10px;
     background: var(--plum-deep);
+    box-sizing: border-box;
+}
+.hero-portrait-square {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
 }
 .hero-portrait {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 @media screen and (max-width: 800px) {
     .hero-grid { grid-template-columns: 1fr; padding-top: 48px; }
